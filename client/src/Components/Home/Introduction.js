@@ -9,7 +9,7 @@ export default function Intoduction() {
             </h1>
             <p className="py-3 fs-5">Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone
             </p>
-            <button className="btn btn-primary px-5 py-3 rounded-pill">Consult Today</button>
+            <button className="btn btn-primary px-5 py-3 rounded-pill">Search Doctor</button>
           </div>
           <div className="col-12 col-lg-6">
             <img className="my-5" src="images/illustrationhero.png" alt="" width="95%"/>
