@@ -1,25 +1,27 @@
 const nodemailer = require('nodemailer');
-const send_email = (from, to, subject, body) => {
+const send_email = (from, to, subject, body, callback) => {
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: 'youremail@gmail.com',
-			pass: 'yourpassword',
+			user: 'zhalokrahman007@gmail.com',
+			pass: process.env.AUTH_PASS,
 		},
 	});
 
 	var mailOptions = {
-		from: 'youremail@gmail.com',
-		to: 'myfriend@yahoo.com',
-		subject: 'Sending Email using Node.js',
-		text: 'That was easy!',
+		from: 'zhalokrahman007@gmail.com',
+		to: to,
+		subject: `Appointment Request from ${from}`,
+		text: `${from} wanted to schedule an online appointment with you please send her a request`,
 	};
 
 	transporter.sendMail(mailOptions, function (error, info) {
 		if (error) {
-			console.log(error);
+			callback(error);
 		} else {
-			console.log('Email sent: ' + info.response);
+			callback(null, 'email sent to doctor');
 		}
 	});
 };
+
+module.exports = send_email;
