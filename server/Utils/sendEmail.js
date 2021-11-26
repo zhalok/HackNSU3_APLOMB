@@ -12,7 +12,7 @@ const send_email = (from, to, callback) => {
 		from: 'zhalokrahman007@gmail.com',
 		to: to,
 		subject: `Appointment Request from ${from} at 5:00 pm on 21 Dec,2021`,
-		text: `${from} wanted to schedule an online appointment with you please send approve a request. Appointment time  at 5:00 pm on 21 Dec,2021`,
+		text: `${from} wanted to schedule an online appointment with you please send approve a request. Appointment time at 5:00 pm on 21 Dec,2021`,
 	};
 
 	transporter.sendMail(mailOptions, function (error, info) {
